@@ -9,7 +9,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Main" >
 
-    <Border Background="#FFDEAE9F" CornerRadius="10">
+    <Border Background="#FFDEAE9F" CornerRadius="0,0,10,10">
         <Border Background="White" CornerRadius="5" Margin="10">
             <Grid>
                 <uc:Button1 x:Name="PickColor"  Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"  XAMLText="Выбрать цвет"   XAMLBackgroundColor="#f7ebe7" XAMLOnMouseEnterColor="#FFDEAE9F" MouseDown="PickColor_MouseDown"/>

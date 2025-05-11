@@ -24,6 +24,8 @@ namespace ShadePicker
         public MainWindow()
         {
             InitializeComponent();
+            Uri iconUri = new Uri("pack://application:,,,/Images/Logo_icon.ico", UriKind.RelativeOrAbsolute);
+            this.Icon = BitmapFrame.Create(iconUri);
             OpenPage(new ShadePicker.Pages.Main());
         }
         public int OpenPage(Page ToPage)
