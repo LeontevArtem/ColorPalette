@@ -28,6 +28,7 @@ namespace ShadePicker.Pages
             InitializeComponent();
         }
         public static int NumberOfColors;
+        public static double TickAngle;
         private void PickColor_MouseDown(object sender, MouseButtonEventArgs e)
         {
             var colorDialog = new ColorDialog();
@@ -41,7 +42,7 @@ namespace ShadePicker.Pages
                 var oppositeColorRGB = Common.ColorConverter.HueToRgb((float)oppositeColor_temp, 0.75f, 0.5f);
                 System.Windows.Media.Color oppositeColor = System.Windows.Media.Color.FromRgb(oppositeColorRGB.R, oppositeColorRGB.G, oppositeColorRGB.B);
                 Colors.Clear();
-                int TickAngle = 47 - ((NumberOfColors-1)/2)*5;
+                //TickAngle = 47 - ((NumberOfColors-1)/2)*5;
                 for (int i=1;i<=(NumberOfColors-1)/2;i++)
                 {
                     double Color_temp = (Common.ColorConverter.RgbToHue(colorDialog.Color.R, colorDialog.Color.G, colorDialog.Color.B) + TickAngle * i) % 360;
@@ -75,8 +76,17 @@ namespace ShadePicker.Pages
         {
             ((Slider)sender).SelectionEnd = e.NewValue;
             NumberOfColors = Convert.ToInt32(e.NewValue);
-            if (Convert.ToInt32(NumberOfColors) % 2 == 0) NumberOfColors+=1;
+            //if (Convert.ToInt32(NumberOfColors) % 2 == 0) NumberOfColors+=1;
             lbAmountOfColors.Content = $"Количество цветов: {NumberOfColors}";
+        }
+
+        private void slAngle_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            ((Slider)sender).SelectionEnd = e.NewValue;
+            TickAngle = Math.Round(e.NewValue,2);
+            lbAngle.Content = $"Угол сдвига: {TickAngle}";
+            AmountOfColors.Maximum = Convert.ToInt32(360 / TickAngle);
+
         }
     }
 }

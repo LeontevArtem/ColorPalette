@@ -14,7 +14,11 @@
             <Grid>
                 <uc:Button1 x:Name="PickColor"  Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"  XAMLText="Выбрать цвет"   XAMLBackgroundColor="#f7ebe7" XAMLOnMouseEnterColor="#FFDEAE9F" MouseDown="PickColor_MouseDown"/>
                 <Label x:Name="lbAmountOfColors" Content="Количество цветов: 3" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="170,10,0,0" Width="170" Height="34" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" Foreground="#6F6967"/>
-                <Slider x:Name="AmountOfColors" IsSelectionRangeEnabled="True" Height="34" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="350,10,0,0" VerticalContentAlignment="Center" Maximum="12" Minimum="3" Value="3" ValueChanged="AmountOfColors_ValueChanged" SmallChange="1" TickPlacement="Both"/>
+                <Slider x:Name="AmountOfColors" IsSelectionRangeEnabled="True" Height="34" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="350,10,0,0" VerticalContentAlignment="Center" Maximum="12" Minimum="1" Value="3" ValueChanged="AmountOfColors_ValueChanged" SmallChange="1" TickPlacement="Both"/>
+                
+                <Label x:Name="lbAngle" Content="Угол сдвига: 30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="170,44,0,0" Width="170" Height="34" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" Foreground="#6F6967"/>
+                <Slider x:Name="slAngle" IsSelectionRangeEnabled="True" Height="34" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="350,44,0,0" VerticalContentAlignment="Center" Maximum="120" Minimum="5" Value="30"  SmallChange="1" ValueChanged="slAngle_ValueChanged" TickPlacement="Both"/>
+
                 <Grid x:Name="ColorBackground" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,100,0,0" Width="150" Height="150">
                     <Label x:Name="ColorName" Content="#Color name"/>
                     <Label x:Name="ColorStatus" Content="Основной" Margin="0,30,0,0"/>
